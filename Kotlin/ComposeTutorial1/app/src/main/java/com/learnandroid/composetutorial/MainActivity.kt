@@ -15,6 +15,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -77,23 +79,49 @@ fun MesseageCard(msg: Message){
 
 }
 
+@Composable
+fun Conversation(messages: List<Message>){
+    LazyColumn{
+        items(messages){messages ->
+            MesseageCard(messages)
+        }
+    }
+}
+
+//Preview Normal sin Modo claro o oscuro
 @Preview
 @Composable
-fun PreviewMesseageCard(){
+fun PreviewMesseageCard1(){
     MesseageCard(
         msg = Message("JESDO", "Hey, take a look at Jetpack Compose, its great!")
     )
 }
 
-//Modo oscuro
+@Preview
+@Composable
+fun PreviewConversation(){
+    ComposeTutorial1Theme{
+        Conversation(SampleData.conversationSample)
+    }
+}
+/**
+ * A Composable function that previews the `MesseageCard` component.
+ * It's annotated with `@Preview` to be visible in Android Studio's preview pane.
+ * This function sets up two previews: one for "Light Mode" and another for "Dark Mode",
+ * allowing for easy visual testing of the UI in different theme configurations.
+ * It wraps the `MesseageCard` in a `ComposeTutorial1Theme` and a `Surface` to provide
+ * the necessary theming and background.
+ */
+//Preview con Modo Claro y Oscuro
 @Preview(name = "Light Mode")
 @Preview(
     uiMode = Configuration.UI_MODE_NIGHT_YES,
     showBackground = true,
     name = "Dark Mode"
 )
+
 @Composable
-fun PreviewMessageCard() {
+fun PreviewMessageCard2() {
     ComposeTutorial1Theme{
         Surface {
             MesseageCard(
