@@ -1,10 +1,67 @@
-# Android / Kotlin (Compose projects)
-**/.gradle/
-**/build/
+# ======================
+# IDEs / Editors
+# ======================
 **/.idea/
 **/*.iml
-**/local.properties
+**/.vscode/
+**/*.code-workspace
+
+# ======================
+# OS junk
+# ======================
 **/.DS_Store
+**/Thumbs.db
+**/desktop.ini
+
+# ======================
+# Java (IntelliJ / general)
+# ======================
+**/*.class
+**/out/
+**/target/
+**/*.log
+
+# ======================
+# Android / Kotlin (Gradle)
+# ======================
+**/.gradle/
+**/build/
+**/local.properties
 **/captures/
 **/.externalNativeBuild/
 **/.cxx/
+
+# ======================
+# Python
+# ======================
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.venv/
+**/venv/
+**/env/
+
+# ======================
+# Rust
+# ======================
+**/target/
+**/*.rs.bk
+
+# ======================
+# Node / Web
+# ======================
+**/node_modules/
+**/dist/
+**/.next/
+**/.nuxt/
+**/.parcel-cache/
+**/.cache/
+**/coverage/
+
+# ======================
+# Secrets (si algún día aparecen)
+# ======================
+**/.env
+**/.env.*
