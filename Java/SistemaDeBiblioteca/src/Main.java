@@ -8,6 +8,8 @@ public class Main {
         library.addBook(new Book(2,"Chain Saw Man"));
         library.addBook(new Book(3,"Sakamoto days"));
 
+        library.showBooks();
         library.searchBooks(1);
+        
     }
 }
